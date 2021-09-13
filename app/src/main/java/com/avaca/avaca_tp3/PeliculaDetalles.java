@@ -36,17 +36,13 @@ public class PeliculaDetalles extends AppCompatActivity {
 
     private void cargarDetallesInmueble() {
         Pelicula i = iViewModel.getById(idPelicula);
-        // TODO: VER SI SE PUEDE LLEVAR EL IF AL VIEWMODEL
+
         if (i != null) {
             ivFoto.setImageResource(i.getIdFoto());
             tvTitulo.setText("Titulo: "+i.getTitulo());
             tvSinopsis.setText("Sinopsis: "+i.getSinopsis());
             tvReparto.setText("Reparto: "+i.getReparto());
-            tvDirector.setText("Director: "+i.getDirector());
-        } else {
-            /* TODO: HACER OTRA ACTIVITY O LLENAR LOS VIEWS CON DATOS GENÉRICOS
-             *   O HACER UN MUTABLE DATA CON ALGÚN BOOLEANO */
-            Log.d("inmueble", "cargarDetallesInmueble: No se encontró inmueble");
+            tvDirector.setText("Director/es: "+i.getDirector());
         }
     }
 }
